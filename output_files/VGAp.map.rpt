@@ -1,0 +1,498 @@
+Analysis & Synthesis report for VGAp
+Thu Nov 18 11:11:50 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: vga_controller:u2
+ 14. Parameter Settings for User Entity Instance: hw_image_generator:u3
+ 15. Port Connectivity Checks: "vga_controller:u2"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Nov 18 11:11:50 2021           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; VGAp                                            ;
+; Top-level Entity Name              ; VGAp                                            ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 1,339                                           ;
+;     Total combinational functions  ; 1,320                                           ;
+;     Dedicated logic registers      ; 111                                             ;
+; Total registers                    ; 111                                             ;
+; Total pins                         ; 20                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE10E22C8       ;                    ;
+; Top-level entity name                                                      ; VGAp               ; VGAp               ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; relojobs.vhd                     ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/relojobs.vhd           ;         ;
+; relojmuylento.vhd                ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/relojmuylento.vhd      ;         ;
+; VGAp.vhd                         ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/VGAp.vhd               ;         ;
+; Gen25MHz.vhd                     ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/Gen25MHz.vhd           ;         ;
+; hw_image_generator.vhd           ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/hw_image_generator.vhd ;         ;
+; vga_controller.vhd               ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/vga_controller.vhd     ;         ;
+; relojlento.vhd                   ; yes             ; User VHDL File  ; C:/altera/13.0sp1/Proyects/VGAplantilla/relojlento.vhd         ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Estimated Total logic elements              ; 1,339                     ;
+;                                             ;                           ;
+; Total combinational functions               ; 1320                      ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 221                       ;
+;     -- 3 input functions                    ; 448                       ;
+;     -- <=2 input functions                  ; 651                       ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 409                       ;
+;     -- arithmetic mode                      ; 911                       ;
+;                                             ;                           ;
+; Total registers                             ; 111                       ;
+;     -- Dedicated logic registers            ; 111                       ;
+;     -- I/O registers                        ; 0                         ;
+;                                             ;                           ;
+; I/O pins                                    ; 20                        ;
+; Embedded Multiplier 9-bit elements          ; 0                         ;
+; Maximum fan-out node                        ; Gen25MHz:u1|clk25MHz~reg0 ;
+; Maximum fan-out                             ; 46                        ;
+; Total fan-out                               ; 3777                      ;
+; Average fan-out                             ; 2.57                      ;
++---------------------------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+; |VGAp                      ; 1320 (0)          ; 111 (0)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |VGAp                       ; work         ;
+;    |Gen25MHz:u1|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGAp|Gen25MHz:u1           ; work         ;
+;    |hw_image_generator:u3| ; 1201 (1201)       ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGAp|hw_image_generator:u3 ; work         ;
+;    |relojlento:u4|         ; 26 (26)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGAp|relojlento:u4         ; work         ;
+;    |relojmuylento:u5|      ; 25 (25)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGAp|relojmuylento:u5      ; work         ;
+;    |relojobs:u6|           ; 6 (6)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGAp|relojobs:u6           ; work         ;
+;    |vga_controller:u2|     ; 61 (61)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGAp|vga_controller:u2     ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------+------------------------+
+; hw_image_generator:u3|red[0]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|red[1]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|red[2]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|red[3]                        ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[0]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[1]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[2]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|green[3]                      ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[0]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[1]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[2]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; hw_image_generator:u3|blue[3]                       ; vga_controller:u2|disp_ena ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                            ;                        ;
++-----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++----------------------------------------+-----------------------------------------+
+; Register name                          ; Reason for Removal                      ;
++----------------------------------------+-----------------------------------------+
+; vga_controller:u2|column[10..30]       ; Stuck at GND due to stuck port data_in  ;
+; vga_controller:u2|row[10..30]          ; Stuck at GND due to stuck port data_in  ;
+; relojobs:u6|conteo[1]                  ; Merged with relojmuylento:u5|conteo[1]  ;
+; relojobs:u6|conteo[0]                  ; Merged with relojmuylento:u5|conteo[0]  ;
+; relojobs:u6|conteo[2]                  ; Merged with relojmuylento:u5|conteo[2]  ;
+; relojobs:u6|conteo[3]                  ; Merged with relojmuylento:u5|conteo[3]  ;
+; relojobs:u6|conteo[4]                  ; Merged with relojmuylento:u5|conteo[4]  ;
+; relojobs:u6|conteo[5]                  ; Merged with relojmuylento:u5|conteo[5]  ;
+; relojobs:u6|conteo[6]                  ; Merged with relojmuylento:u5|conteo[6]  ;
+; relojobs:u6|conteo[7]                  ; Merged with relojmuylento:u5|conteo[7]  ;
+; relojobs:u6|conteo[8]                  ; Merged with relojmuylento:u5|conteo[8]  ;
+; relojobs:u6|conteo[9]                  ; Merged with relojmuylento:u5|conteo[9]  ;
+; relojobs:u6|conteo[10]                 ; Merged with relojmuylento:u5|conteo[10] ;
+; relojobs:u6|conteo[11]                 ; Merged with relojmuylento:u5|conteo[11] ;
+; relojobs:u6|conteo[12]                 ; Merged with relojmuylento:u5|conteo[12] ;
+; relojobs:u6|conteo[13]                 ; Merged with relojmuylento:u5|conteo[13] ;
+; relojobs:u6|conteo[14]                 ; Merged with relojmuylento:u5|conteo[14] ;
+; relojobs:u6|conteo[15]                 ; Merged with relojmuylento:u5|conteo[15] ;
+; relojobs:u6|conteo[16]                 ; Merged with relojmuylento:u5|conteo[16] ;
+; vga_controller:u2|row[9]               ; Stuck at GND due to stuck port data_in  ;
+; Total Number of Removed Registers = 60 ;                                         ;
++----------------------------------------+-----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 111   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 52    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; vga_controller:u2|row[0]               ; 43      ;
+; vga_controller:u2|row[31]              ; 18      ;
+; vga_controller:u2|column[31]           ; 9       ;
+; vga_controller:u2|column[0]            ; 19      ;
+; hw_image_generator:u3|obs[11]          ; 9       ;
+; hw_image_generator:u3|obs[5]           ; 7       ;
+; hw_image_generator:u3|obs[4]           ; 7       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |VGAp|hw_image_generator:u3|y[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGAp|hw_image_generator:u3|y[3] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |VGAp|vga_controller:u2|v_count  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:u2 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; h_pulse        ; 96    ; Signed Integer                        ;
+; h_bp           ; 48    ; Signed Integer                        ;
+; h_pixels       ; 640   ; Signed Integer                        ;
+; h_fp           ; 16    ; Signed Integer                        ;
+; h_pol          ; '0'   ; Enumerated                            ;
+; v_pulse        ; 2     ; Signed Integer                        ;
+; v_bp           ; 33    ; Signed Integer                        ;
+; v_pixels       ; 480   ; Signed Integer                        ;
+; v_fp           ; 10    ; Signed Integer                        ;
+; v_pol          ; '0'   ; Enumerated                            ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: hw_image_generator:u3 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; pixels_y       ; 480   ; Signed Integer                            ;
+; pixels_x       ; 640   ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "vga_controller:u2" ;
++---------+-------+----------+------------------+
+; Port    ; Type  ; Severity ; Details          ;
++---------+-------+----------+------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC     ;
++---------+-------+----------+------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 18 11:11:47 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGAp -c VGAp
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file relojobs.vhd
+    Info (12022): Found design unit 1: relojobs-arqrelojobs
+    Info (12023): Found entity 1: relojobs
+Info (12021): Found 2 design units, including 1 entities, in source file relojmuylento.vhd
+    Info (12022): Found design unit 1: relojmuylento-arqrelojmuylento
+    Info (12023): Found entity 1: relojmuylento
+Info (12021): Found 2 design units, including 1 entities, in source file vgap.vhd
+    Info (12022): Found design unit 1: VGAp-behavioral
+    Info (12023): Found entity 1: VGAp
+Info (12021): Found 2 design units, including 1 entities, in source file gen25mhz.vhd
+    Info (12022): Found design unit 1: Gen25MHz-behavior
+    Info (12023): Found entity 1: Gen25MHz
+Info (12021): Found 2 design units, including 1 entities, in source file hw_image_generator.vhd
+    Info (12022): Found design unit 1: hw_image_generator-behavior
+    Info (12023): Found entity 1: hw_image_generator
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: vga_controller-behavior
+    Info (12023): Found entity 1: vga_controller
+Info (12021): Found 2 design units, including 1 entities, in source file relojlento.vhd
+    Info (12022): Found design unit 1: relojlento-arqrelojlento
+    Info (12023): Found entity 1: relojlento
+Info (12127): Elaborating entity "VGAp" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at VGAp.vhd(25): object "reset" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VGAp.vhd(25): object "cs" assigned a value but never read
+Info (12129): Elaborating entity "Gen25MHz" using architecture "A:behavior" for hierarchy "Gen25MHz:u1"
+Info (12129): Elaborating entity "vga_controller" using architecture "A:behavior" for hierarchy "vga_controller:u2"
+Info (12129): Elaborating entity "relojmuylento" using architecture "A:arqrelojmuylento" for hierarchy "relojmuylento:u5"
+Info (12129): Elaborating entity "relojlento" using architecture "A:arqrelojlento" for hierarchy "relojlento:u4"
+Info (12129): Elaborating entity "relojobs" using architecture "A:arqrelojobs" for hierarchy "relojobs:u6"
+Info (12129): Elaborating entity "hw_image_generator" using architecture "A:behavior" for hierarchy "hw_image_generator:u3"
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(37): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(37): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(42): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(42): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(46): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(46): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(50): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(50): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(54): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(54): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(58): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(58): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(62): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(62): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(68): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(73): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(77): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(81): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(85): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(89): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(93): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(99): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(103): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(107): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(111): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(115): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(119): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(123): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(128): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(132): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(136): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(140): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(144): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(148): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(152): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(157): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(161): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(165): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(169): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(173): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(177): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(181): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(187): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(191): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(195): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(199): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(203): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(207): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(211): signal "obs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(217): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(33): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(33): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(33): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "blue[0]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "blue[1]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "blue[2]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "blue[3]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "green[0]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "green[1]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "green[2]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "green[3]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "red[0]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "red[1]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "red[2]" at hw_image_generator.vhd(33)
+Info (10041): Inferred latch for "red[3]" at hw_image_generator.vhd(33)
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "beep" has no driver
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[2]" merged with LATCH primitive "hw_image_generator:u3|red[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[1]" merged with LATCH primitive "hw_image_generator:u3|red[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|red[3]" merged with LATCH primitive "hw_image_generator:u3|red[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[3]" merged with LATCH primitive "hw_image_generator:u3|green[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[2]" merged with LATCH primitive "hw_image_generator:u3|green[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|green[1]" merged with LATCH primitive "hw_image_generator:u3|green[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[3]" merged with LATCH primitive "hw_image_generator:u3|blue[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[2]" merged with LATCH primitive "hw_image_generator:u3|blue[0]"
+    Info (13026): Duplicate LATCH primitive "hw_image_generator:u3|blue[1]" merged with LATCH primitive "hw_image_generator:u3|blue[0]"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1379 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 1359 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4631 megabytes
+    Info: Processing ended: Thu Nov 18 11:11:50 2021
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
